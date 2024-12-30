@@ -93,6 +93,15 @@ EOF
 `sudo apt-get install -y kubelet=1.19.0-00 kubeadm=1.19.0-00 kubectl=1.19.0-00`
 `sudo apt-mark hold kubelet kubeadm kubectl`
 
+#### For Raspbian, and kubernetes v1.32 updated guidance
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl
+
+- download gpg key
+  - `curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg`
+- add repo
+  - `echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list`
+
 # Cgroup memory
 
 Append `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` to the end of `/boot/firmware/cmdline.txt` and `reboot`
