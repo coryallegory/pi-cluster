@@ -19,7 +19,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 This should be committed as part of your cluster configuration, but we are using Flannel.
 
 It can be manually installed with the following
-`kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`
+`kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml`
+
+see: https://github.com/flannel-io/flannel?tab=readme-ov-file#deploying-flannel-with-kubectl
 
 ## Other
 
